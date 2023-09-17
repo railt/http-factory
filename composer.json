@@ -1,14 +1,17 @@
 {
     "name": "railt/http-factory",
-    "license": "MIT",
     "type": "library",
-    "homepage": "http://railt.org",
-    "description": "The Railt Framework implementation of GraphQL HTTP factory component library",
+    "license": "MIT",
     "keywords": [
         "http",
-        "factory",
-        "parsing"
+        "response",
+        "request",
+        "batching",
+        "parsing",
+        "graphql",
+        "factory"
     ],
+    "homepage": "https://github.com/railt",
     "authors": [
         {
             "name": "Kirill Nesmeyanov",
@@ -20,39 +23,34 @@
         "source": "https://github.com/railt/http-factory"
     },
     "require": {
-        "php": ">=7.4",
+        "php": "^8.1",
         "ext-json": "*",
-        "ext-mbstring": "*",
-        "railt/contracts": "^2.0",
-        "psr/http-message": "^1.0",
-        "railt/http": "^2.0"
+        "railt/http": "^2.0",
+        "railt/http-contracts": "^2.0",
+        "railt/http-factory-contracts": "^2.0"
     },
     "autoload": {
         "psr-4": {
-            "Railt\\HttpFactory\\": "src"
+            "Railt\\Http\\Factory\\": "src"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.3"
+        "psr/http-message": "^1.0|^2.0",
+        "phpunit/phpunit": "^10.3",
+        "vimeo/psalm": "^5.15"
     },
     "autoload-dev": {
         "psr-4": {
-            "Railt\\HttpFactory\\Tests\\": "tests"
+            "Railt\\Http\\Factory\\Tests\\": "tests"
         }
     },
-    "scripts": {
-        "phpunit": "@php vendor/phpunit/phpunit/phpunit"
+    "suggest": {
+        "psr/http-message": "(^1.0|^2.0) To be able to create GraphQL requests from PSR-7"
     },
     "extra": {
-        "railt": {
-            "extensions": [
-                "Railt\\HttpFactory\\HttpFactoryServiceExtension"
-            ]
-        },
         "branch-alias": {
-            "1.3.x": "1.3.x-dev",
-            "1.4.x": "1.4.x-dev",
-            "dev-master": "2.0.x-dev"
+            "dev-master": "2.x-dev",
+            "dev-main": "2.x-dev"
         }
     },
     "config": {
